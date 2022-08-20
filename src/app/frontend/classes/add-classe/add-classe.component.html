@@ -1,0 +1,23 @@
+<form>
+    <div class="row">
+        <div class="col">
+            <input name="libelle" [(ngModel)]="newClass.libelle" type="text" class="form-control" placeholder="Class Name">
+        </div>
+        <div class="col">
+            <input name="description" [(ngModel)]="newClass.description" type="text" class="form-control" placeholder="Class Description">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <select name="status" [(ngModel)]="newClass.status" class="form-control" id="exampleFormControlSelect1">
+              <option>close</option>
+              <option>open</option>
+            </select>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div>
+        <button (click)="addClass()" type="submit" class="btn btn-success">Submit</button>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+<div>
+    <button routerLink="/add-student" type="button" class="btn btn-primary">Add new student</button>
+    <div class="line"></div>
+    <table class="table table-bordered table-striped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Surname</th>
+                <th scope="col">Name</th>
+                <th scope="col">Class</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.firstname}}</td>
+                <td>{{student.lastname}}</td>
+                <td>{{student.classe}}</td>
+                <td>{{student.status}}</td>
+                <td>
+                  <!-- routerLink="/students/{{student._id}}" -->
+                    <button routerLink="/students/{{student._id}}" class="btn btn-success float-left">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button (click)="deleteStudent(student._id)" class="btn btn-danger float-right">
+                        <i class="bi bi-trash"></i>
+                        </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
